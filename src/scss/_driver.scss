@@ -1,0 +1,99 @@
+section{
+	@extend %main-section;
+	@include box-sizing(border-box);
+	article.driver{
+		@extend %article-bg;
+		float:left;
+		padding: 10px;
+		div{
+			float:left;
+			@include box-sizing(border-box);
+		}
+		.driver-bio{
+			width:45%;
+			font-size: 0.9rem;
+			@include breakpoint($tablet){
+				width: 100%;
+				font-size: 0.8rem;
+			}
+			@include breakpoint($mobile){
+				font-size: 0.7rem;
+			}
+			ul{
+				float:left;
+				width: 40%;
+				margin-right: 20px;
+				@include breakpoint($tablet){
+						width: 45%;
+						margin: 0 auto;
+					}
+				li:nth-child(odd){
+					color: $orange;
+				}
+				&.driver-table{
+					@include breakpoint($tablet){
+						float: left;
+					}
+					li{
+						border-bottom: 1px dashed $orange;
+						&::before{
+							margin-right: 10px;
+						}
+					}
+				}
+				&.driver-datos{
+					text-align: right;
+					float: right;
+					li{
+						border-bottom: 1px dashed $orange;	
+					}
+				}
+			}
+			.driver-casco{
+				width: 100%;
+				text-align: center;
+				margin-top: 20px;
+				img{
+					width: 50%;
+				}
+			}
+		}
+		.driver-photo{
+			width: 55%;
+			margin-bottom: 20px;
+			text-align: right;
+			@include breakpoint($tablet){
+				width: 100%;
+				text-align: center;
+			}
+			img{
+				width: 80%;
+				@include breakpoint($mobile){
+					width: 100%;
+				}
+			}			
+		}
+		.driver-img{
+			width: 100%;
+			text-align: center;
+			img{
+				width: 80%;
+				@include breakpoint($mobile){
+					width: 100%;
+				}
+			}
+		}
+		.driver-text{
+			margin-top: 20px;
+			p{
+				padding: 20px;
+				@include breakpoint($tablet){
+					font-size: 0.9rem;
+				}
+				@include breakpoint($mobile){
+					font-size: 0.8rem;
+				}
+			}
+		}
+	}
+}

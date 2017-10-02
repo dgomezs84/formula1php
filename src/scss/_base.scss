@@ -1,0 +1,138 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+//Colors
+$black: #020A3D;
+$white: #f5f5f5;
+$orange:#ea8501;
+$default-text-shadow-color: rgba($orange, 0.6);
+$default-text-shadow-blur: 7px;
+$default-text-shadow-v-offset: 7px;
+
+//Header
+$height: 50px;
+
+//Breakpoint
+$tablet: max-width 789px;
+$mobile: max-width 600px;
+
+//Fonts
+$lato: 'Lato', sans-serif;
+
+//Mixins
+@mixin transform($transform) {
+  -webkit-transform: $transform;
+      -ms-transform: $transform;
+          transform: $transform;
+}
+
+%main-section{
+	max-width: 1000px;
+	margin:0 auto;
+	background: $white;
+	text-align: justify;
+	font-size: 1.1rem;
+	padding: 30px 75px;
+	color: $black;
+	@include breakpoint($tablet){
+		padding: 20px 50px;
+	}
+	@include breakpoint($mobile){
+		padding: 15px 30px;
+	}
+}
+
+%body-bg{
+	background: $white url(bg.png) top center repeat;
+}
+
+%p-bg{
+	background: $white url(bgp.png) top center repeat;
+}
+
+%article-bg{
+	border: 1px solid $black;
+	background: lighten($white, 3%);
+}
+
+%p-page{
+	text-align: justify;
+	margin: 10px auto;
+	font-size: 1.05rem;
+	padding: 0px 20px;
+	@include breakpoint($tablet){
+		font-size: 0.9rem;
+	}
+	a{
+		color: $orange;
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+}
+
+%img-page{
+	margin: 15px auto;
+	width: 50%;
+	@include breakpoint($tablet){
+		width: 70%;
+	}
+	img{
+		width: 100%;
+	}
+}
+
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+@mixin animation($animationName, $duration, $timing-function: false, $delay: false, $iteration-count: false, $direction: false) {
+	@include experimental(animation-name, $animationName, -moz, -webkit, -o, -ms, not -khtml, official);
+	@include experimental(animation-duration, $duration, -moz, -webkit, -o, -ms, not -khtml, official);
+
+	@if $timing-function {
+			@include experimental(animation-timing-function, $timing-function, -moz, -webkit, -o, -ms, not -khtml, official);
+	}
+
+	@if $delay {
+			@include experimental(animation-delay, $delay, -moz, -webkit, -o, -ms, not -khtml, official);
+	}
+
+	@if $iteration-count {
+			@include experimental(animation-iteration-count, $iteration-count, -moz, -webkit, -o, -ms, not -khtml, official);
+	}
+
+	@if $direction {
+			@include experimental(animation-direction, $direction, -moz, -webkit, -o, -ms, not -khtml, official);
+	}
+}
+
+//.back {
+//-webkit-animation: cssAnimation 1s 1 ease;
+//-moz-animation: cssAnimation 1s 1 ease;
+//-o-animation: cssAnimation 1s 1 ease;
+//}
+//@-webkit-keyframes cssAnimation {
+//from { -webkit-transform: translate(300px); }
+//to { -webkit-transform: translate(0px); }
+//}
+//@-moz-keyframes cssAnimation {
+//from { -moz-transform: translate(300px); }
+//to { -moz-transform: translate(0px); }
+//}
+//@-o-keyframes cssAnimation {
+//from { -o-transform: translate(300px); }
+//to { -o-transform: translate(0px); }
+//}

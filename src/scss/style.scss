@@ -1,0 +1,113 @@
+@import "compass/reset";
+@import "compass/css3";
+@import "compass/css3/deprecated-support";
+@import "compass/css3/selection";
+@import "compass/utilities";
+@import "breakpoint";
+@import "base";
+
+*{
+	@include selection($orange,$white);
+}
+
+body{
+	@extend %body-bg;
+	font-family: $lato;
+	color: $white;
+	letter-spacing: 1.3px;
+	line-height: 1.6;
+	@include box-sizing(border-box); 
+	@include display-flex(flex);
+	@include flex-wrap(wrap);
+	min-height: 100vh;
+	@include justify-content(center);
+}
+
+h2{
+	text-align: center;
+	font-size: 3rem;
+	text-transform: uppercase;
+	margin-bottom: 30px;
+	@include single-text-shadow;
+	@include breakpoint($tablet){
+		padding-top: 60px;
+		font-size: 2.3rem;
+		margin-bottom: 15px;
+	}
+	@include breakpoint($mobile){
+		font-size:1.5rem;
+		margin-bottom: 20px;
+	}
+}
+
+a{
+	text-decoration: none;
+	color: $white;
+}
+
+.clearfix{
+	clear: both;
+}
+
+main{
+	margin-bottom: 50px;
+}
+// <a href="" class="icon-back"></a>
+
+@include keyframes(cssAnimation){
+		from{transform:translate(300px);}
+		to{transform:translate(0px);}
+	}
+
+.back{
+	text-align: right;
+	position: relative;
+	margin-top: -50px;
+	bottom: 60px;
+	right: 10px;
+	@include animation(cssAnimation, 1s, $timing-function: ease, $iteration-count: 1, $direction: false);
+	@include breakpoint($tablet){
+		bottom: 20px;
+	}
+	@include breakpoint($mobile){
+		bottom: 10px;
+	}
+}
+a.icon-back{
+	font-size: 1.4rem;
+	&:hover{
+		color: $orange;
+	}
+}
+
+#scrollUp {
+  bottom: 20px;
+  right: 20px;
+	width: 40px;
+	height: 40px;
+	background: url(../img/up.png);
+	background-size: cover;
+	@include border-radius(50%);
+	@include breakpoint($tablet){
+		right: 10px;
+	}
+	@include breakpoint($mobile){
+		bottom: 10px;
+	}
+	&:hover{
+		background: url(../img/uph.png);
+		background-size: cover;
+	}
+}
+
+@import "header";
+@import "footer";
+@import "news";
+@import "group";
+@import "teams";
+@import "driver";
+@import "team";
+@import "circuit";
+@import "form";
+@import "page";
+@import "noticia";

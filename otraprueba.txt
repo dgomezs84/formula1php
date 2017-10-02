@@ -1,0 +1,1 @@
+Otro fichero que gitignore no subirá

@@ -1,0 +1,59 @@
+footer{
+	@include box-sizing(border-box);
+	background: $white;
+	text-align: center;
+	padding: 20px 0px;
+	margin-bottom: 20px;
+	width: 100%;
+	@include align-self(flex-end);
+	@include breakpoint($tablet){
+		font-size: 0.9rem;
+	}
+	@include breakpoint($mobile){
+		font-size: 0.8rem;
+	}
+	nav{
+		&.footer-corporate{
+			padding-top: 20px;
+			ul{
+				li{
+					@include breakpoint($mobile){
+						width: 30%;
+						border: none;
+						vertical-align: middle;
+						padding-top: 10px;
+					}
+					&:nth-child(odd){
+						@include breakpoint($mobile){
+							border-right: 1px solid $orange;
+						}
+					}
+				}
+			}
+		}
+		&.footer-social{
+			ul{
+				li{
+					padding: 0 40px;
+				}
+			}
+		}
+		ul{
+			li{
+				display: inline-block;
+				padding: 0px 20px;
+				border-left: 1px solid $orange;
+				&:first-child{
+					border-left: none;
+				}
+				a{
+					color:$black;
+					font-weight: bold;
+					&:hover{
+						color: $orange;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,5 @@
+Elegimos prueba txt para comprobar si funciona .gititnore
+
+chino anillo
+chino
+anillo

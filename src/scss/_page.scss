@@ -1,0 +1,31 @@
+section{
+	@extend %main-section;
+	@include box-sizing(border-box);
+	width: 100%;
+	max-width: 1000px;
+	article.page{
+		width: 100%;
+		margin: 0 auto;
+		@extend %article-bg;
+		h3{
+			margin-top: 15px;
+			font-size: 1.6rem;
+			text-align: center;
+			@include single-text-shadow;
+		}
+		h4{
+			padding: 10px;
+			font-size: 1.2rem;
+			@include single-text-shadow;
+			@include breakpoint($mobile){
+				text-align: center;
+			}
+		}
+		p{
+		 @extend %p-page;	
+		}
+		.page-img{
+			@extend %img-page;
+		}
+	}
+}

@@ -1,0 +1,90 @@
+section{
+	@extend %main-section;
+	article.news{
+		@extend %article-bg;
+		padding: 20px;
+		margin-bottom: 30px;
+		&:hover{
+			@include transition(all .5s ease);
+			background: $black;
+			@include opacity(.9);
+			img{
+				@include transform(scale(1.1));
+			}
+			.news-link{
+				h3{
+					color: $white;
+					@include single-text-shadow;
+				}
+			}
+			div.news-inbox{
+				color: $orange;
+			}
+		}
+		a.news-link{
+			display:table;
+			h3{
+				color:$black;
+				font-size:1.4rem;
+				text-align: center;
+				margin-bottom: 20px;
+				text-decoration: underline;
+				@include transition(all .7s ease);
+				@include breakpoint($tablet){
+					font-size: 1.2rem;
+				}
+				@include breakpoint($mobile){
+					font-size: 1rem;
+				}
+			}
+			.news-box{
+				display: inline-block;
+				min-height: 150px;
+				overflow: hidden;
+				width:100%;
+				div.news-img{
+					img{
+						display:table-cell;
+						height: 180px;
+						float:left;
+						margin-right: 20px;
+						overflow: hidden;
+						@include transition(all .5s ease);
+						@include breakpoint($tablet){
+							float: none;
+							width: 85%;
+							height: auto;
+							margin:0 auto 20px auto;
+						}
+						@include breakpoint($mobile){
+							width: 90%;
+						}
+					}
+				}
+				div.news-inbox{
+					display: table-cell;
+					width: 40%;
+					@include transition(all .5s ease);
+					p{
+						color:$orange;
+						text-align: right;
+						font-size: 0.7rem;
+						margin-bottom: 20px;
+						span{
+							margin-right: 5px;
+						}
+					}
+					h4{
+						color: $black;
+						@extend %p-bg;
+						padding: 20px;
+						font-size: 0.9rem;
+						@include breakpoint($mobile){
+							font-size: 0.8rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,115 @@
+section{
+	@extend %main-section;
+	article.team{
+		@extend %article-bg;
+		@include box-sizing(border-box);
+		padding: 10px;
+		h4{
+			text-align: center;
+			text-transform: uppercase;
+			font-size: 2rem;
+			font-weight: bold;
+			margin: 20px auto;
+			@include single-text-shadow;
+			@include breakpoint($tablet){
+				font-size: 1.5rem;
+			}
+			@include breakpoint($mobile){
+				font-size: 1.3rem;
+			}
+		}
+		.team-first{
+			.team-logo{
+				width: 50%;
+				float:left;
+				margin-bottom: 20px;
+				@include breakpoint($tablet){
+					width:90%;
+					text-align: center;
+					margin: 0 auto;
+					float: none;
+				}
+				img{
+					width: 80%;
+				}
+			}
+			.team-bio{
+				float:left;
+				width: 50%;
+				font-size: 0.9rem;
+				@include breakpoint($tablet){
+					margin: 0 auto;
+					width:90%;
+					float:none;
+					font-size: 0.8rem;
+				}
+				li{
+					border-bottom: 1px dashed $orange;
+					&::before{
+							margin-right: 10px;
+						}
+					&:nth-child(odd){
+						color:$orange;
+					}
+				}
+				.team-table{
+					float:left;
+					width:50%;
+				}
+				.team-datos{
+					width:50%;
+					float:right;
+					text-align: right;
+					margin-bottom: 20px;
+				}
+			}
+		}
+		.team-car{
+			clear:both;
+			margin: 20px auto;
+			text-align: center;
+			width:100%;
+			img{
+				width: 100%;
+			}
+		}
+		.team-driver{
+			.team-uno,.team-dos{
+				text-align: center;
+				img{
+					width: 80%;
+				}
+				.team-box{
+					p{
+						background: none;	
+					}
+					width:100%;
+					text-align: justify;
+					margin: 20px auto;
+				}
+			}
+		}
+		h3{
+			text-align: center;
+			font-size: 1.5rem;
+			margin-bottom: 20px;
+			@include single-text-shadow;
+			@include breakpoint($tablet){
+		  	font-size: 1.2rem;
+	  	}
+		}
+		p{
+			padding: 10px;
+			font-size:1rem;
+			@extend %p-bg;
+			@include breakpoint($tablet){
+				font-size: 0.9rem;
+			}
+			@include breakpoint($mobile){
+				font-size: 0.8rem;
+			}
+		}
+		
+	}
+}
+

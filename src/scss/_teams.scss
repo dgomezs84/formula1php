@@ -1,0 +1,76 @@
+section{
+	@extend %main-section;
+	@include box-sizing(border-box);
+	article.teams{
+		width: 100%;
+		margin: 0 auto 20px auto;
+		@extend %article-bg;
+		float: left;
+		&:hover{
+			background: $black;
+		}
+		a{
+			color: $black;
+			@include transition(all .5s ease);
+			&:hover{
+				color:$white;
+				.teams-left{
+					background: $black;
+				}
+				.teams-right{
+					img{
+						@include transform(scale(1.1));
+					}
+				}
+			}
+			.teams-left{
+				float:left;
+				width:50%;
+				@include breakpoint($mobile){
+					width:100%;
+				}
+				h3{
+					text-align: center;
+					font-size: 1.5rem;
+					font-weight: bold;
+					margin: 5px auto;
+					@include breakpoint($tablet){
+						font-size: 1.3rem;
+					}
+				}
+				p{
+					margin-left: 20px;
+					@include breakpoint($tablet){
+						font-size: 0.8rem;
+					}
+					span{
+						margin-right: 10px;
+						color: $orange;
+					}
+				}
+				img{
+					width:60%;
+					display: block;
+				}
+			}
+			.teams-right{
+				float: left;
+				width:50%;
+				overflow: hidden;
+				@include breakpoint($mobile){
+					width:100%;
+				}
+				img{
+					float:left;
+					width:100%;
+					border-left: 1px solid $black;
+					@include transition(all .5s ease);
+					@include breakpoint($mobile){
+						border-left: none;
+						border-top: 1px solid $black;
+					}
+				}
+			}
+		}
+	}
+}
