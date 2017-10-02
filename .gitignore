@@ -20,5 +20,5 @@ Icon
 .Spotlight-V100
 .Trashes
 
-prueba.txt
-otraprueba.txt
+tablas/*.*
+*.txt

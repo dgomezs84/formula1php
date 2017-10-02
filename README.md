@@ -14,8 +14,9 @@ This README would normally document whatever steps are necessary to get your app
 
 ### Contribution guidelines ###
 
-* Gracias a Daniel Gómez
+* Gracias a Javier Muñoz
 
 ### Who do I talk to? ###
 
 * dgomezs@gmail.com
+* Daniel Gómez Sánchez
